@@ -59,35 +59,33 @@
     
     [[nodeView textContainer] setContainerSize: NSMakeSize(FLT_MAX, FLT_MAX)];
     [[nodeView textContainer] setWidthTracksTextView: YES];
-    [self addSubview: nodeView];
+//    [self addSubview: nodeView];
     
-    [nodeView setTranslatesAutoresizingMaskIntoConstraints: NO];
+//    [nodeView setTranslatesAutoresizingMaskIntoConstraints: NO];
     
     //    NSDictionary *views = NSDictionaryOfVariableBindings(self, rawMime);
     
     //    [self setContentCompressionResistancePriority: NSLayoutPriorityFittingSizeCompression-1 forOrientation: NSLayoutConstraintOrientationVertical];
     //NSLayoutPriorityDefaultHigh
+    CGFloat borderWidth = 0.0;
     [nodeView setWantsLayer: YES];
     CALayer* rawLayer = nodeView.layer;
-    [rawLayer setBorderWidth: 2.0];
+    [rawLayer setBorderWidth: borderWidth];
     [rawLayer setBorderColor: [[NSColor blueColor] CGColor]];
     
     
     CALayer* myLayer = self.layer;
-    [myLayer setBorderWidth: 4.0];
+    [myLayer setBorderWidth: borderWidth*2];
     [myLayer setBorderColor: [[NSColor redColor] CGColor]];
     
     self.mimeView = nodeView;
     
-    
-   
     NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
     [nc addObserver: self.mimeView selector: @selector(viewFrameChanged:) name: NSViewFrameDidChangeNotification object: self.mimeView];
     
-    [nodeView removeConstraints: nodeView.constraints];
-    [self removeConstraints: self.constraints];
-    [self setNeedsUpdateConstraints: YES];
     [self loadData];
+
+    [super createSubviews];
 }
 
 -(void) dealloc {
