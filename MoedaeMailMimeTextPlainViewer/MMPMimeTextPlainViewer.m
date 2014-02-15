@@ -7,6 +7,7 @@
 //
 
 #import "MMPMimeTextPlainViewer.h"
+#import <WebKit/WebKit.h>
 
 @interface MMPMimeTextPlainViewer ()
 
@@ -15,82 +16,61 @@
 @implementation MMPMimeTextPlainViewer
 
 +(NSSet*) contentTypes {
-    return [NSSet setWithObjects:@"TEXT/PLAIN", nil];
+    return [NSSet setWithObjects:@"TEXT/PLAIN", @"TEXT/HTML", @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil];
 }
 
 
 -(void) loadData {
-    
-    NSDictionary* documentConversionAttributes = [NSDictionary new];
-    NSAttributedString* subComposition;
+    NSAttributedString* composition;
     
     if (self.node.isDecoded && self.node.decoded) {
-        subComposition = [[NSAttributedString alloc] initWithData: self.node.decoded options: nil documentAttributes: &documentConversionAttributes error: nil];
+        if ([self.node.subtype isEqualToString: @"PLAIN"]) {
+            composition = [self loadPlainData];
+            
+        } else if ([self.node.subtype isEqualToString: @"ENRICHED"]) {
+            composition = [self loadEnrichedData];
+            
+        } else if ([self.node.subtype isEqualToString: @"HTML"]) {
+            composition = [self loadHTMLData];
+            
+        } else if (([self.node.type isEqualToString: @"APPLICATION"]) && [self.node.subtype isEqualToString: @"MSWORD"]) {
+            composition = [self loadMSWord];
+            
+        }
+    }
+
+    
+    if (!composition) {
+        composition = [[NSAttributedString alloc] initWithString: @"Loading..." attributes: self.attributes];
     }
     
-    if (!subComposition) {
-        subComposition = [[NSAttributedString alloc] initWithString: @"Loading..." attributes: self.attributes];
-    }
+    [[(NSTextView*)(self.mimeView) textStorage] setAttributedString: composition];
     
-    
-    [[(NSTextView*)(self.mimeView) textStorage] setAttributedString: subComposition];
     [self setNeedsUpdateConstraints: YES];
 }
 
--(void) createSubviews {
-    NSSize subStructureSize = self.frame.size;
+-(NSAttributedString*) loadPlainData {
+    NSDictionary* documentConversionAttributes = [NSDictionary new];
     
-    NSTextView* nodeView = [[MMPTextViewWithIntrinsic alloc] initWithFrame: NSMakeRect(0, 0, subStructureSize.width, subStructureSize.height)];
-    // View in nib is min size. Therefore we can use nib dimensions as min when called from awakeFromNib
-    [nodeView setMinSize: NSMakeSize(subStructureSize.width, subStructureSize.height)];
-    [nodeView setMaxSize: NSMakeSize(FLT_MAX, FLT_MAX)];
-    [nodeView setVerticallyResizable: YES];
-    
-    // No horizontal scroll version
-    //    [rawMime setHorizontallyResizable: YES];
-    //    [rawMime setAutoresizingMask: NSViewWidthSizable];
-    //
-    //    [[rawMime textContainer] setContainerSize: NSMakeSize(subStructureSize.width, FLT_MAX)];
-    //    [[rawMime textContainer] setWidthTracksTextView: YES];
-    
-    // Horizontal resizable version
-    [nodeView setHorizontallyResizable: YES];
-    //    [rawMime setAutoresizingMask: (NSViewWidthSizable | NSViewHeightSizable)];
-    
-    [[nodeView textContainer] setContainerSize: NSMakeSize(FLT_MAX, FLT_MAX)];
-    [[nodeView textContainer] setWidthTracksTextView: YES];
-//    [self addSubview: nodeView];
-    
-//    [nodeView setTranslatesAutoresizingMaskIntoConstraints: NO];
-    
-    //    NSDictionary *views = NSDictionaryOfVariableBindings(self, rawMime);
-    
-    //    [self setContentCompressionResistancePriority: NSLayoutPriorityFittingSizeCompression-1 forOrientation: NSLayoutConstraintOrientationVertical];
-    //NSLayoutPriorityDefaultHigh
-    CGFloat borderWidth = 0.0;
-    [nodeView setWantsLayer: YES];
-    CALayer* rawLayer = nodeView.layer;
-    [rawLayer setBorderWidth: borderWidth];
-    [rawLayer setBorderColor: [[NSColor blueColor] CGColor]];
-    
-    
-    CALayer* myLayer = self.layer;
-    [myLayer setBorderWidth: borderWidth*2];
-    [myLayer setBorderColor: [[NSColor redColor] CGColor]];
-    
-    self.mimeView = nodeView;
-    
-    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver: self.mimeView selector: @selector(viewFrameChanged:) name: NSViewFrameDidChangeNotification object: self.mimeView];
-    
-    [self loadData];
-
-    [super createSubviews];
+    return [[NSAttributedString alloc] initWithData: self.node.decoded options: nil documentAttributes: &documentConversionAttributes error: nil];
 }
 
--(void) dealloc {
-    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-    [nc removeObserver: self.mimeView];
+-(NSAttributedString*) loadEnrichedData {
+    NSDictionary* documentConversionAttributes = [NSDictionary new];
+
+    return [[NSAttributedString alloc] initWithData: self.node.decoded options: nil documentAttributes: &documentConversionAttributes error: nil];
+}
+
+-(NSAttributedString*) loadHTMLData {
+    NSDictionary* documentConversionAttributes = [NSDictionary new];
+    
+    return [[NSAttributedString alloc] initWithHTML: self.node.decoded documentAttributes: &documentConversionAttributes];
+}
+
+-(NSAttributedString*) loadMSWord {
+    NSDictionary* documentConversionAttributes = [NSDictionary new];
+    
+    return [[NSAttributedString alloc] initWithDocFormat: self.node.decoded documentAttributes: &documentConversionAttributes];
 }
 
 @end

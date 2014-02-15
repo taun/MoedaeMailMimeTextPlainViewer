@@ -12,7 +12,7 @@
 /*!
  Viewer for mime type Text.Plain
  */
-@interface MMPMimeTextPlainViewer : MMPBaseMimeView
+@interface MMPMimeTextPlainViewer : MMPAttributedStringBase
 
 
 @end
