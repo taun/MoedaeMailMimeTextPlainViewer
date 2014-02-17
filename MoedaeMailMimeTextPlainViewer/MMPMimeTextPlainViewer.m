@@ -41,7 +41,7 @@
 
     
     if (!composition) {
-        composition = [[NSAttributedString alloc] initWithString: @"Loading..." attributes: self.attributes];
+        composition = [[NSAttributedString alloc] initWithString: @"Loading..." attributes: self.options.attributes];
     }
     
     [[(NSTextView*)(self.mimeView) textStorage] setAttributedString: composition];
