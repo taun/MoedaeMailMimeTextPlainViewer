@@ -15,9 +15,9 @@
 
 @implementation MMPMimeTextPlainViewer
 
-+(NSSet*) contentTypes {
-    return [NSSet setWithObjects:@"TEXT/PLAIN", @"TEXT/HTML", @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil];
-}
+//+(NSSet*) contentTypes {
+//    return [NSSet setWithObjects:@"TEXT/PLAIN", @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil];
+//}
 
 
 -(void) loadData {
