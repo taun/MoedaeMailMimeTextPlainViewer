@@ -12,7 +12,26 @@
 		C5B8324A18A2AA8000A94197 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B8324918A2AA8000A94197 /* Cocoa.framework */; };
 		C5B8325418A2AA8000A94197 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5B8325218A2AA8000A94197 /* InfoPlist.strings */; };
 		C5B8325F18A2AFC000A94197 /* MMPMimeTextPlainViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B8325E18A2AFC000A94197 /* MMPMimeTextPlainViewer.m */; };
+		C5DC2E3718C57610005C593D /* MBEnrichedTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DC2E3618C57610005C593D /* MBEnrichedTextParser.m */; };
+		C5DC2E3E18C627A4005C593D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DC2E3D18C627A4005C593D /* XCTest.framework */; };
+		C5DC2E4418C627A4005C593D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5DC2E4218C627A4005C593D /* InfoPlist.strings */; };
+		C5DC2E4618C627A4005C593D /* MoedaeMailMimeTextPlainViewer_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DC2E4518C627A4005C593D /* MoedaeMailMimeTextPlainViewer_Tests.m */; };
+		C5DC2E4F18C62889005C593D /* EnrichedSample0.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5DC2E4E18C62889005C593D /* EnrichedSample0.txt */; };
+		C5DC2E5018C660E7005C593D /* MBEnrichedTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DC2E3618C57610005C593D /* MBEnrichedTextParser.m */; };
+		C5DC2E5118C66131005C593D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B8324C18A2AA8000A94197 /* Foundation.framework */; };
+		C5DC2E5218C6613F005C593D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B8324E18A2AA8000A94197 /* AppKit.framework */; };
+		C5DC2E5418C6D1A4005C593D /* EnrichedSample1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5DC2E5318C6D1A4005C593D /* EnrichedSample1.txt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5DC2E4818C627A4005C593D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5B8323E18A2AA8000A94197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5B8324518A2AA8000A94197;
+			remoteInfo = MoedaeMailMimeTextPlainViewer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C50062C518AFE51A00371E5D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -28,6 +47,16 @@
 		C5B8325B18A2AB6000A94197 /* MoedaeMailPluginsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoedaeMailPluginsBase.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MailBoxesWS-flefgebzxrtslzetgxarmnthbbgu/Build/Products/Debug/MoedaeMailPluginsBase.framework"; sourceTree = "<group>"; };
 		C5B8325D18A2AFC000A94197 /* MMPMimeTextPlainViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPMimeTextPlainViewer.h; sourceTree = "<group>"; };
 		C5B8325E18A2AFC000A94197 /* MMPMimeTextPlainViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPMimeTextPlainViewer.m; sourceTree = "<group>"; };
+		C5DC2E3518C57610005C593D /* MBEnrichedTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnrichedTextParser.h; sourceTree = "<group>"; };
+		C5DC2E3618C57610005C593D /* MBEnrichedTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnrichedTextParser.m; sourceTree = "<group>"; };
+		C5DC2E3C18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoedaeMailMimeTextPlainViewer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5DC2E3D18C627A4005C593D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C5DC2E4118C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoedaeMailMimeTextPlainViewer Tests-Info.plist"; sourceTree = "<group>"; };
+		C5DC2E4318C627A4005C593D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C5DC2E4518C627A4005C593D /* MoedaeMailMimeTextPlainViewer_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoedaeMailMimeTextPlainViewer_Tests.m; sourceTree = "<group>"; };
+		C5DC2E4718C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoedaeMailMimeTextPlainViewer Tests-Prefix.pch"; sourceTree = "<group>"; };
+		C5DC2E4E18C62889005C593D /* EnrichedSample0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EnrichedSample0.txt; path = TestResources/EnrichedSample0.txt; sourceTree = "<group>"; };
+		C5DC2E5318C6D1A4005C593D /* EnrichedSample1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EnrichedSample1.txt; path = TestResources/EnrichedSample1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +70,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5DC2E3918C627A4005C593D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5DC2E5218C6613F005C593D /* AppKit.framework in Frameworks */,
+				C5DC2E5118C66131005C593D /* Foundation.framework in Frameworks */,
+				C5DC2E3E18C627A4005C593D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B8324F18A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer */,
+				C5DC2E3F18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests */,
 				C5B8324818A2AA8000A94197 /* Frameworks */,
 				C5B8324718A2AA8000A94197 /* Products */,
 			);
@@ -57,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B8324618A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer.mmmimeviewerplugin */,
+				C5DC2E3C18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +109,7 @@
 				C583066018A6B1DE006C279D /* MoedaeMailPlugins.framework */,
 				C5B8325B18A2AB6000A94197 /* MoedaeMailPluginsBase.framework */,
 				C5B8324918A2AA8000A94197 /* Cocoa.framework */,
+				C5DC2E3D18C627A4005C593D /* XCTest.framework */,
 				C5B8324B18A2AA8000A94197 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -88,6 +130,8 @@
 			children = (
 				C5B8325D18A2AFC000A94197 /* MMPMimeTextPlainViewer.h */,
 				C5B8325E18A2AFC000A94197 /* MMPMimeTextPlainViewer.m */,
+				C5DC2E3518C57610005C593D /* MBEnrichedTextParser.h */,
+				C5DC2E3618C57610005C593D /* MBEnrichedTextParser.m */,
 				C5B8325018A2AA8000A94197 /* Supporting Files */,
 			);
 			path = MoedaeMailMimeTextPlainViewer;
@@ -101,6 +145,35 @@
 				C5B8325518A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5DC2E3F18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC2E4D18C62828005C593D /* Resources */,
+				C5DC2E4518C627A4005C593D /* MoedaeMailMimeTextPlainViewer_Tests.m */,
+				C5DC2E4018C627A4005C593D /* Supporting Files */,
+			);
+			path = "MoedaeMailMimeTextPlainViewer Tests";
+			sourceTree = "<group>";
+		};
+		C5DC2E4018C627A4005C593D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC2E4118C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests-Info.plist */,
+				C5DC2E4218C627A4005C593D /* InfoPlist.strings */,
+				C5DC2E4718C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5DC2E4D18C62828005C593D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC2E5318C6D1A4005C593D /* EnrichedSample1.txt */,
+				C5DC2E4E18C62889005C593D /* EnrichedSample0.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +196,24 @@
 			productReference = C5B8324618A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer.mmmimeviewerplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		C5DC2E3B18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5DC2E4A18C627A4005C593D /* Build configuration list for PBXNativeTarget "MoedaeMailMimeTextPlainViewer Tests" */;
+			buildPhases = (
+				C5DC2E3818C627A4005C593D /* Sources */,
+				C5DC2E3918C627A4005C593D /* Frameworks */,
+				C5DC2E3A18C627A4005C593D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5DC2E4918C627A4005C593D /* PBXTargetDependency */,
+			);
+			name = "MoedaeMailMimeTextPlainViewer Tests";
+			productName = "MoedaeMailMimeTextPlainViewer Tests";
+			productReference = C5DC2E3C18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -131,6 +222,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "MOEDAE LLC";
+				TargetAttributes = {
+					C5DC2E3B18C627A4005C593D = {
+						TestTargetID = C5B8324518A2AA8000A94197;
+					};
+				};
 			};
 			buildConfigurationList = C5B8324118A2AA8000A94197 /* Build configuration list for PBXProject "MoedaeMailMimeTextPlainViewer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -145,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				C5B8324518A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer */,
+				C5DC2E3B18C627A4005C593D /* MoedaeMailMimeTextPlainViewer Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -158,6 +255,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5DC2E3A18C627A4005C593D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5DC2E4418C627A4005C593D /* InfoPlist.strings in Resources */,
+				C5DC2E5418C6D1A4005C593D /* EnrichedSample1.txt in Resources */,
+				C5DC2E4F18C62889005C593D /* EnrichedSample0.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -165,17 +272,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DC2E3718C57610005C593D /* MBEnrichedTextParser.m in Sources */,
 				C5B8325F18A2AFC000A94197 /* MMPMimeTextPlainViewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5DC2E3818C627A4005C593D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5DC2E4618C627A4005C593D /* MoedaeMailMimeTextPlainViewer_Tests.m in Sources */,
+				C5DC2E5018C660E7005C593D /* MBEnrichedTextParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5DC2E4918C627A4005C593D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5B8324518A2AA8000A94197 /* MoedaeMailMimeTextPlainViewer */;
+			targetProxy = C5DC2E4818C627A4005C593D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C5B8325218A2AA8000A94197 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C5B8325318A2AA8000A94197 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C5DC2E4218C627A4005C593D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5DC2E4318C627A4005C593D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -285,6 +418,40 @@
 			};
 			name = Release;
 		};
+		C5DC2E4B18C627A4005C593D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoedaeMailMimeTextPlainViewer Tests/MoedaeMailMimeTextPlainViewer Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MoedaeMailMimeTextPlainViewer Tests/MoedaeMailMimeTextPlainViewer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C5DC2E4C18C627A4005C593D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoedaeMailMimeTextPlainViewer Tests/MoedaeMailMimeTextPlainViewer Tests-Prefix.pch";
+				INFOPLIST_FILE = "MoedaeMailMimeTextPlainViewer Tests/MoedaeMailMimeTextPlainViewer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -305,6 +472,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C5DC2E4A18C627A4005C593D /* Build configuration list for PBXNativeTarget "MoedaeMailMimeTextPlainViewer Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5DC2E4B18C627A4005C593D /* Debug */,
+				C5DC2E4C18C627A4005C593D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

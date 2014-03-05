@@ -9,15 +9,19 @@
 #import "MMPMimeTextPlainViewer.h"
 #import <WebKit/WebKit.h>
 
+#import "MBEnrichedTextParser.h"
+
 @interface MMPMimeTextPlainViewer ()
+
+@property (nonatomic,strong) MBEnrichedTextParser*      parser;
 
 @end
 
 @implementation MMPMimeTextPlainViewer
 
-//+(NSSet*) contentTypes {
-//    return [NSSet setWithObjects:@"TEXT/PLAIN", @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil];
-//}
++(NSSet*) contentTypes {
+    return [NSSet setWithObjects: @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil]; // @"TEXT/PLAIN",
+}
 
 
 -(void) loadData {
@@ -56,9 +60,12 @@
 }
 
 -(NSAttributedString*) loadEnrichedData {
-    NSDictionary* documentConversionAttributes = [NSDictionary new];
-
-    return [[NSAttributedString alloc] initWithData: self.node.decoded options: nil documentAttributes: &documentConversionAttributes error: nil];
+    self.parser = [MBEnrichedTextParser parserWithData: self.node.decoded attributes: self.options.attributes];
+    NSAttributedString* decodedAttributed = [self.parser parse];
+//    NSString* enrichedString = [[NSString alloc] initWithData: self.node.decoded encoding: NSUTF8StringEncoding];
+//    NSAttributedString* decodedAttributed = [NSAttributedString attributedStringFromTextEnrichedString: enrichedString attributes: self.options.attributes];
+    
+    return decodedAttributed;
 }
 
 -(NSAttributedString*) loadHTMLData {

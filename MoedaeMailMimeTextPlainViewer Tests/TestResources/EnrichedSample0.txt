@@ -1,0 +1,21 @@
+<bold>Now</bold> is the time for <italic>all</italic>
+good men
+<smaller>(and <<women>)</smaller> to
+<ignoreme>come</ignoreme>
+
+to the aid of their
+
+
+<color><param>red</param>beloved</color>
+country.
+
+By the way,
+I think that <paraindent><param>left</param><<smaller>
+
+</paraindent>should REALLY be called
+
+<paraindent><param>left</param><<tinier></paraindent>
+
+and that I am always right.
+
+-- the end
