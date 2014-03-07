@@ -83,6 +83,9 @@ static NSDictionary* ColorMap;
     [self.currentOutput deleteCharactersInRange: NSMakeRange(0, self.currentOutput.length)];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
 //    NSLog(@"%@", parser);
     
@@ -105,6 +108,7 @@ static NSDictionary* ColorMap;
     [self.contentString appendString: string];
 }
 
+
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 //    NSLog(@"%@", parser);
     
@@ -119,6 +123,7 @@ static NSDictionary* ColorMap;
     }
 
 }
+#pragma clang diagnostic pop
 
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
 //    NSLog(@"%@", parser);
