@@ -9,6 +9,8 @@
 #import "MBEnrichedTextParser.h"
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
+#import <MoedaeMailPlugins/NSObject+TokenDispatch.h>
+
 
 @interface MBEnrichedTextParser ()
 
@@ -92,14 +94,7 @@ static NSDictionary* ColorMap;
     NSString* cleanElementName = [elementName stringByReplacingOccurrencesOfString: @"-" withString: @""];
     [self.enrichedCodesStack addObject: cleanElementName];
     
-    NSString* codeMethod = [NSString stringWithFormat:@"codeStart%@",[elementName capitalizedString]];
-    
-    if ([self respondsToSelector: NSSelectorFromString(codeMethod)]) {
-        [self performSelector: NSSelectorFromString(codeMethod)];
-    } else {
-        [self codeStartUnknown];
-    }
-
+    [self performCleanedSelectorString: elementName prefixedBy: @"codeStart" fallbackSelector: @"codeStartUnknown"];
 }
 
 
@@ -112,16 +107,9 @@ static NSDictionary* ColorMap;
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 //    NSLog(@"%@", parser);
     
-    NSString* currentCodeBlock = [self popCode];
+    [self popCode];
     
-    NSString* codeMethod = [NSString stringWithFormat:@"codeEnd%@",[currentCodeBlock capitalizedString]];
-    
-    if ([self respondsToSelector: NSSelectorFromString(codeMethod)]) {
-        [self performSelector: NSSelectorFromString(codeMethod)];
-    } else {
-        [self codeEndUnknown];
-    }
-
+    [self performCleanedSelectorString: elementName prefixedBy: @"codeEnd" fallbackSelector: @"codeEndUnknown"];
 }
 #pragma clang diagnostic pop
 
