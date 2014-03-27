@@ -20,7 +20,7 @@
 @implementation MMPMimeTextPlainViewer
 
 +(NSSet*) contentTypes {
-    return [NSSet setWithObjects: @"TEXT/ENRICHED", @"APPLICATION/MSWORD",nil]; // @"TEXT/PLAIN",
+    return [NSSet setWithObjects: @"TEXT/ENRICHED", @"APPLICATION/MSWORD", nil]; // @"TEXT/PLAIN",
 }
 
 
