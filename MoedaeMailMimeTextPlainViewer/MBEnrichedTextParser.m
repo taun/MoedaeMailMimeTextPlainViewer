@@ -190,6 +190,8 @@ static NSDictionary* ColorMap;
     // there should never be content between the tag and param for the tag but we push the content anyhow.
     [self dupLastAttribute];
 }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 -(void) codeEndParam {
     NSString* previousCode = [self.enrichedCodesStack lastObject];
@@ -203,6 +205,8 @@ static NSDictionary* ColorMap;
         [self performSelector: NSSelectorFromString(codeMethod) withObject: param];
     }
 }
+
+#pragma clang diagnostic pop
 
 -(void) codeStartFontfamily {
     // do nothing until we have the param
