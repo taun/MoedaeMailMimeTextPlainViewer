@@ -56,7 +56,9 @@
 -(NSAttributedString*) loadPlainData {
     NSDictionary* documentConversionAttributes = [NSDictionary new];
     
-    return [[NSAttributedString alloc] initWithData: self.node.decoded options: nil documentAttributes: &documentConversionAttributes error: nil];
+    NSError* error;
+    
+    return [[NSAttributedString alloc] initWithData: self.node.decoded options: @{} documentAttributes: &documentConversionAttributes error: &error];
 }
 
 -(NSAttributedString*) loadEnrichedData {

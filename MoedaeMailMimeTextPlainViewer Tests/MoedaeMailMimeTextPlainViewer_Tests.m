@@ -38,7 +38,7 @@
 //    NSError* error;
     
     NSString *path = [self.testBundle pathForResource: @"EnrichedSample0" ofType: @"txt" inDirectory: nil];
-    
+
 //    NSString* sampleContent = [NSString stringWithContentsOfFile: path encoding: NSASCIIStringEncoding error: &error];
     
     NSData* data = [NSData dataWithContentsOfFile: path];
@@ -51,11 +51,11 @@
 }
 
 - (void)testSample1 {
-    //    NSError* error;
+//    NSError* error;
     
     NSString *path = [self.testBundle pathForResource: @"EnrichedSample1" ofType: @"txt" inDirectory: nil];
     
-    //    NSString* sampleContent = [NSString stringWithContentsOfFile: path encoding: NSASCIIStringEncoding error: &error];
+//    NSString* sampleContent = [NSString stringWithContentsOfFile: path encoding: NSASCIIStringEncoding error: &error];
     
     NSData* data = [NSData dataWithContentsOfFile: path];
     

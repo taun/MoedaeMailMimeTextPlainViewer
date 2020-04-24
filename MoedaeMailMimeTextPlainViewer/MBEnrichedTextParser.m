@@ -89,11 +89,9 @@ static NSDictionary* ColorMap;
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-//    NSLog(@"%@", parser);
-    
     NSString* cleanElementName = [elementName stringByReplacingOccurrencesOfString: @"-" withString: @""];
     [self.enrichedCodesStack addObject: cleanElementName];
-    
+
     [self performCleanedSelectorString: elementName prefixedBy: @"codeStart" fallbackSelector: @"codeStartUnknown"];
 }
 
@@ -105,8 +103,6 @@ static NSDictionary* ColorMap;
 
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-//    NSLog(@"%@", parser);
-    
     [self popCode];
     
     [self performCleanedSelectorString: elementName prefixedBy: @"codeEnd" fallbackSelector: @"codeEndUnknown"];
